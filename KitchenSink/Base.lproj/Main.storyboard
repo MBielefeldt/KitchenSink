@@ -103,6 +103,25 @@
             <point key="canvasLocation" x="-33" y="-1303"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AskerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AskerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="answerTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="KitchenSinkViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KitchenSinkViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelAsking:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="doneAsking:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
