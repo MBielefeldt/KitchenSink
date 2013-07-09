@@ -17,6 +17,33 @@
 
 @implementation KitchenSinkViewController
 
+#define DRAIN_DURATION 3.0
+#define DRAIN_DELAY 1.0
+
+- (void)drain
+{
+    for (UIView *view in self.kitchenSink.subviews) {
+        CGAffineTransform transform = view.transform;
+        if (CGAffineTransformIsIdentity(transform)) {
+            [UIView animateWithDuration:DRAIN_DURATION/3 delay:DRAIN_DELAY options:UIViewAnimationOptionCurveLinear animations:^{
+                view.transform = CGAffineTransformRotate(CGAffineTransformScale(transform, 0.7, 0.7), 2*M_PI/3 * 1);
+            } completion:^(BOOL finished){
+                if (finished) [UIView animateWithDuration:DRAIN_DURATION/3 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+                    view.transform = CGAffineTransformRotate(CGAffineTransformScale(transform, 0.4, 0.4), 2*M_PI/3 * 2);
+                } completion:^(BOOL finished){
+                    if (finished) [UIView animateWithDuration:DRAIN_DURATION/3 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+                        view.transform = CGAffineTransformRotate(CGAffineTransformScale(transform, 0.1, 0.1), 2*M_PI/3 * 3);
+                    } completion:^(BOOL finished){
+                        if (finished) {
+                            [view removeFromSuperview];
+                        }
+                    }];
+                }];
+            }];
+        }
+    }
+}
+
 #define MOVE_DURATION 3.0
 
 - (IBAction)tap:(UITapGestureRecognizer *)sender
@@ -25,9 +52,13 @@
     
     for (UIView *view in self.kitchenSink.subviews) {
         if (CGRectContainsPoint(view.frame, tapLocation)) {
-            [UIView animateWithDuration:MOVE_DURATION animations:^{
+            [UIView animateWithDuration:MOVE_DURATION delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
                 [self setRandomLocationForView:view];
-            }];        }
+                view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.99, 0.99);
+            } completion:^(BOOL finished){
+                view.transform = CGAffineTransformIdentity;
+            }];
+        }
     }
 }
 
@@ -39,6 +70,7 @@
     foodLabel.backgroundColor = [UIColor clearColor];
     [self setRandomLocationForView:foodLabel];
     [self.kitchenSink addSubview:foodLabel];
+    [self drain];
 }
 
 - (void)setRandomLocationForView:(UIView *)view
