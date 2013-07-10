@@ -55,7 +55,6 @@
             }
         }
     }
-    
 }
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
