@@ -12,6 +12,7 @@
 @interface KitchenSinkViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *kitchenSink;
+@property (weak, nonatomic) NSTimer *drainTimer; // weak because system keeps a strong pointer to the timer
 
 @end
 
@@ -19,6 +20,35 @@
 
 #define DRAIN_DURATION 3.0
 #define DRAIN_DELAY 1.0
+
+- (void)startDrainTimer
+{
+    self.drainTimer = [NSTimer scheduledTimerWithTimeInterval:DRAIN_DURATION/3 target:self selector:@selector(drain:) userInfo:nil repeats:YES];
+}
+
+- (void)drain:(NSTimer *)timer
+{
+    [self drain];
+}
+
+- (void)stopDrainTimer
+{
+    [self.drainTimer invalidate];
+    self.drainTimer = nil; // not really needed as this is a weak pointer, but good practice anyway...
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self startDrainTimer];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self stopDrainTimer];
+    
+}
 
 - (void)drain
 {
@@ -70,7 +100,6 @@
     foodLabel.backgroundColor = [UIColor clearColor];
     [self setRandomLocationForView:foodLabel];
     [self.kitchenSink addSubview:foodLabel];
-    [self drain];
 }
 
 - (void)setRandomLocationForView:(UIView *)view
