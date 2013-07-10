@@ -9,14 +9,49 @@
 #import "KitchenSinkViewController.h"
 #import "AskerViewController.h"
 
-@interface KitchenSinkViewController ()
+@interface KitchenSinkViewController ()  <UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *kitchenSink;
 @property (weak, nonatomic) NSTimer *drainTimer; // weak because system keeps a strong pointer to the timer
+@property (weak, nonatomic) UIActionSheet *sinkControlActionSheet;
 
 @end
 
 @implementation KitchenSinkViewController
+
+#define SINK_CONTROL_TITLE @"Sink Controls"
+#define SINK_CONTROL_START_DRAIN @"Start Drain"
+#define SINK_CONTROL_STOP_DRAIN @"Stop Drain"
+#define SINK_CONTROL_CANCEL @"Cancel"
+#define SINK_CONTROL_EMPTY @"Empty Sink"
+
+- (IBAction)controlSink:(UIBarButtonItem *)sender
+{
+    if (!self.sinkControlActionSheet) {
+        NSString *drainButton = (self.drainTimer ? SINK_CONTROL_STOP_DRAIN : SINK_CONTROL_START_DRAIN);
+        
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:SINK_CONTROL_TITLE
+                                                                 delegate:self
+                                                        cancelButtonTitle:SINK_CONTROL_CANCEL
+                                                   destructiveButtonTitle:SINK_CONTROL_EMPTY
+                                                         otherButtonTitles:drainButton, nil];
+        [actionSheet showFromBarButtonItem:sender animated:YES];
+        self.sinkControlActionSheet = actionSheet; // assigned here to make sure view keeps a strong pointer to the action sheet before assigning it to the weak property
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == actionSheet.destructiveButtonIndex) {
+        [self.kitchenSink.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    }
+    else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:SINK_CONTROL_START_DRAIN]) {
+        [self startDrainTimer];
+    }
+    else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:SINK_CONTROL_STOP_DRAIN]) {
+        [self stopDrainTimer];
+    }
+}
 
 #define DISH_CLEANING_INTERVAL 2.0
 

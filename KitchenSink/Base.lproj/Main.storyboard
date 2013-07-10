@@ -26,6 +26,12 @@
                                             <segue destination="7Te-4L-iFn" kind="modal" identifier="Ask" modalTransitionStyle="partialCurl" id="Olb-Xt-XtF"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nq8-uD-rnS"/>
+                                    <barButtonItem title="Control Sink" id="zwf-R6-q6w">
+                                        <connections>
+                                            <action selector="controlSink:" destination="BYZ-38-t0r" id="ldg-gn-nan"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kSF-8n-fel">
