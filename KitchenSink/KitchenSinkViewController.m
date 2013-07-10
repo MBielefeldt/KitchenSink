@@ -18,6 +18,16 @@
 
 @implementation KitchenSinkViewController
 
+#define DISH_CLEANING_INTERVAL 2.0
+
+- (void)cleanDish
+{
+    if (self.kitchenSink.window) {
+        [self addFood:nil];
+        [self performSelector:@selector(cleanDish) withObject:nil afterDelay:DISH_CLEANING_INTERVAL];
+    }
+}
+
 #define DRAIN_DURATION 3.0
 #define DRAIN_DELAY 1.0
 
@@ -41,6 +51,7 @@
 {
     [super viewDidAppear:animated];
     [self startDrainTimer];
+    [self cleanDish];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -92,9 +103,33 @@
     }
 }
 
+#define BLUE_FOOD   @"Jello"
+#define GREEN_FOOD  @"Broccoli"
+#define ORANGE_FOOD @"Carrot"
+#define RED_FOOD    @"Pepper"
+#define PURPLE_FOOD @"Eggplant"
+#define BROWN_FOOD  @"Potato Peels"
+
 - (void)addFood:(NSString *)food
 {
     UILabel *foodLabel = [[UILabel alloc] init];
+
+    static NSDictionary *foods = nil;
+    
+    if (!foods) {
+        foods = @{BLUE_FOOD     : [UIColor blueColor],
+                  GREEN_FOOD    : [UIColor greenColor],
+                  ORANGE_FOOD   : [UIColor orangeColor],
+                  RED_FOOD      : [UIColor redColor],
+                  PURPLE_FOOD   : [UIColor purpleColor],
+                  BROWN_FOOD    : [UIColor brownColor]};
+    }
+    
+    if (food == nil) {
+        food = [[foods allKeys] objectAtIndex:(arc4random() % [foods count])];
+        foodLabel.textColor = [foods objectForKey:food];
+    }
+    
     foodLabel.text = food;
     foodLabel.font = [UIFont systemFontOfSize:46];
     foodLabel.backgroundColor = [UIColor clearColor];
