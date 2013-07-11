@@ -23,6 +23,8 @@
 		0859BD6D1789C45A007D4DDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0859BD6B1789C45A007D4DDE /* InfoPlist.strings */; };
 		0859BD6F1789C45A007D4DDE /* KitchenSinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0859BD6E1789C45A007D4DDE /* KitchenSinkTests.m */; };
 		08635DE51789C65D00E3C3FF /* AskerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08635DE41789C65D00E3C3FF /* AskerViewController.m */; };
+		08DF0981178E02E200AD7B8E /* CMMotionManager+Shared.m in Sources */ = {isa = PBXBuildFile; fileRef = 08DF0980178E02E200AD7B8E /* CMMotionManager+Shared.m */; };
+		08DF0983178E033400AD7B8E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DF0982178E033400AD7B8E /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		0859BD6E1789C45A007D4DDE /* KitchenSinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KitchenSinkTests.m; sourceTree = "<group>"; };
 		08635DE31789C65D00E3C3FF /* AskerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskerViewController.h; sourceTree = "<group>"; };
 		08635DE41789C65D00E3C3FF /* AskerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskerViewController.m; sourceTree = "<group>"; };
+		08DF097F178E02E200AD7B8E /* CMMotionManager+Shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CMMotionManager+Shared.h"; sourceTree = "<group>"; };
+		08DF0980178E02E200AD7B8E /* CMMotionManager+Shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CMMotionManager+Shared.m"; sourceTree = "<group>"; };
+		08DF0982178E033400AD7B8E /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08DF0983178E033400AD7B8E /* CoreMotion.framework in Frameworks */,
 				084E464E178D848C006D8CC5 /* MobileCoreServices.framework in Frameworks */,
 				0859BD461789C45A007D4DDE /* CoreGraphics.framework in Frameworks */,
 				0859BD481789C45A007D4DDE /* UIKit.framework in Frameworks */,
@@ -107,6 +113,7 @@
 		0859BD421789C45A007D4DDE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08DF0982178E033400AD7B8E /* CoreMotion.framework */,
 				084E464D178D848C006D8CC5 /* MobileCoreServices.framework */,
 				0859BD431789C45A007D4DDE /* Foundation.framework */,
 				0859BD451789C45A007D4DDE /* CoreGraphics.framework */,
@@ -124,6 +131,8 @@
 				0859BD531789C45A007D4DDE /* KitchenSinkAppDelegate.m */,
 				0859BD581789C45A007D4DDE /* KitchenSinkViewController.h */,
 				0859BD591789C45A007D4DDE /* KitchenSinkViewController.m */,
+				08DF097F178E02E200AD7B8E /* CMMotionManager+Shared.h */,
+				08DF0980178E02E200AD7B8E /* CMMotionManager+Shared.m */,
 				08635DE31789C65D00E3C3FF /* AskerViewController.h */,
 				08635DE41789C65D00E3C3FF /* AskerViewController.m */,
 				0859BD5B1789C45A007D4DDE /* Images.xcassets */,
@@ -262,6 +271,7 @@
 				0859BD5A1789C45A007D4DDE /* KitchenSinkViewController.m in Sources */,
 				08635DE51789C65D00E3C3FF /* AskerViewController.m in Sources */,
 				0859BD541789C45A007D4DDE /* KitchenSinkAppDelegate.m in Sources */,
+				08DF0981178E02E200AD7B8E /* CMMotionManager+Shared.m in Sources */,
 				0859BD501789C45A007D4DDE /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
