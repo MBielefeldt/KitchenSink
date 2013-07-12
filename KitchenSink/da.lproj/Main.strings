@@ -1,0 +1,21 @@
+
+/* Class = "IBUIButton"; normalTitle = "Cancel"; ObjectID = "Fix-ha-iZ8"; */
+"Fix-ha-iZ8.normalTitle" = "Fortryd";
+
+/* Class = "IBUILabel"; text = "Question"; ObjectID = "K4B-Qc-YOC"; */
+"K4B-Qc-YOC.text" = "Spørgsmål";
+
+/* Class = "IBUIBarButtonItem"; title = "Add Food Photo"; ObjectID = "N6O-x3-79h"; */
+"N6O-x3-79h.title" = "Tilføj Mad Foto";
+
+/* Class = "IBUIBarButtonItem"; title = "Take Food Photo"; ObjectID = "OSy-pM-gpt"; */
+"OSy-pM-gpt.title" = "Tag Mad Foto";
+
+/* Class = "IBUIBarButtonItem"; title = "Add Food"; ObjectID = "chV-f6-Y18"; */
+"chV-f6-Y18.title" = "Tilføj Mad";
+
+/* Class = "IBUIButton"; normalTitle = "Done"; ObjectID = "sxK-bP-Qk8"; */
+"sxK-bP-Qk8.normalTitle" = "Færdig";
+
+/* Class = "IBUIBarButtonItem"; title = "Control Sink"; ObjectID = "zwf-R6-q6w"; */
+"zwf-R6-q6w.title" = "Kontroller Vask";
