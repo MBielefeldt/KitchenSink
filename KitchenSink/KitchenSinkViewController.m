@@ -99,11 +99,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#define SINK_CONTROL_TITLE @"Sink Controls"
-#define SINK_CONTROL_START_DRAIN @"Start Drain"
-#define SINK_CONTROL_STOP_DRAIN @"Stop Drain"
-#define SINK_CONTROL_CANCEL @"Cancel"
-#define SINK_CONTROL_EMPTY @"Empty Sink"
+#define SINK_CONTROL_TITLE       NSLocalizedString(@"Sink Controls", @"Control sink action sheet header")
+#define SINK_CONTROL_START_DRAIN NSLocalizedString(@"Start Drain", @"Control sink action sheet start drain item")
+#define SINK_CONTROL_STOP_DRAIN  NSLocalizedString(@"Stop Drain", @"Control sink action sheet stop drain item")
+#define SINK_CONTROL_CANCEL      NSLocalizedString(@"Cancel", @"Control sink action sheet cancel item")
+#define SINK_CONTROL_EMPTY       NSLocalizedString(@"Empty Sink", @"Control sink action sheet empty drain item")
 
 - (IBAction)controlSink:(UIBarButtonItem *)sender
 {
@@ -249,12 +249,12 @@
     }
 }
 
-#define BLUE_FOOD   @"Jello"
-#define GREEN_FOOD  @"Broccoli"
-#define ORANGE_FOOD @"Carrot"
-#define RED_FOOD    @"Pepper"
-#define PURPLE_FOOD @"Eggplant"
-#define BROWN_FOOD  @"Potato Peels"
+#define BLUE_FOOD   NSLocalizedString(@"Jello", @"Blue food item")
+#define GREEN_FOOD  NSLocalizedString(@"Broccoli", @"Green food item")
+#define ORANGE_FOOD NSLocalizedString(@"Carrot", @"Orange food item")
+#define RED_FOOD    NSLocalizedString(@"Pepper", @"Red food item")
+#define PURPLE_FOOD NSLocalizedString(@"Eggplant", @"Purple food item")
+#define BROWN_FOOD  NSLocalizedString(@"Potato Peels", @"Brown food item")
 
 - (void)addFood:(NSString *)food
 {
@@ -296,7 +296,7 @@
 {
     if ([segue.identifier isEqualToString:@"Ask"]) {
         AskerViewController *askerVC = segue.destinationViewController;
-        askerVC.question = @"What food do you want in the sink?";
+        askerVC.question = NSLocalizedString(@"What food do you want in the sink?", @"Question posed when adding food");
     }
 }
 

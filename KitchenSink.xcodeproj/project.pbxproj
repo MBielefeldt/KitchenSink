@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		084E464E178D848C006D8CC5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084E464D178D848C006D8CC5 /* MobileCoreServices.framework */; };
+		0851EAC31790B83C00AEFAEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0851EAC21790B83C00AEFAEC /* Localizable.strings */; };
 		0859BD441789C45A007D4DDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0859BD431789C45A007D4DDE /* Foundation.framework */; };
 		0859BD461789C45A007D4DDE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0859BD451789C45A007D4DDE /* CoreGraphics.framework */; };
 		0859BD481789C45A007D4DDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0859BD471789C45A007D4DDE /* UIKit.framework */; };
@@ -42,6 +43,7 @@
 		0803F0481790AC96003E73A9 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0803F0491790AC96003E73A9 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		084E464D178D848C006D8CC5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0851EAC21790B83C00AEFAEC /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0859BD401789C45A007D4DDE /* KitchenSink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KitchenSink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0859BD431789C45A007D4DDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0859BD451789C45A007D4DDE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,6 +131,7 @@
 		0859BD491789C45A007D4DDE /* KitchenSink */ = {
 			isa = PBXGroup;
 			children = (
+				0851EAC21790B83C00AEFAEC /* Localizable.strings */,
 				0859BD551789C45A007D4DDE /* Main.storyboard */,
 				0859BD521789C45A007D4DDE /* KitchenSinkAppDelegate.h */,
 				0859BD531789C45A007D4DDE /* KitchenSinkAppDelegate.m */,
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0859BD5C1789C45A007D4DDE /* Images.xcassets in Resources */,
+				0851EAC31790B83C00AEFAEC /* Localizable.strings in Resources */,
 				0859BD4E1789C45A007D4DDE /* InfoPlist.strings in Resources */,
 				0859BD571789C45A007D4DDE /* Main.storyboard in Resources */,
 			);
